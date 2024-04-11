@@ -15,7 +15,14 @@ ON e.department_id = d.department_id
 --- first_name
 --- last_name
 --- salary
---- department_nameSELECT e.employee_id, e.first_name, e.last_name, e.salary, d.department_nameFROM hcm.employees e LEFT OUTER JOIN hcm.departments dON e.department_id = d.department_id--Challenge 3: Write a query to return the total number of employees in each department. Include the department_name in the query result. Also, include employees who have not been
+--- department_name
+
+SELECT e.employee_id, e.first_name, e.last_name, e.salary, d.department_name
+FROM hcm.employees e LEFT OUTER JOIN hcm.departments d
+ON e.department_id = d.department_id
+
+
+--Challenge 3: Write a query to return the total number of employees in each department. Include the department_name in the query result. Also, include employees who have not been
 --assigned to a department
 
 SELECT COUNT(e.employee_id) as emp_count, d.department_name
